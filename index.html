@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create elements using classes</title>
+</head>
+<body class="body">
+    <script>
+        class element {
+            constructor(
+                element,
+                elementToAttach,
+                width,
+                height,
+                backgroundColor,
+            ){
+                this.element = element,
+                this.elementToAttach = elementToAttach,
+                this.width = width,
+                this.height = height,
+                this.backgroundColor = backgroundColor
+            }
+            CreateElement(){
+                let element = document.createElement(this.elementToAttach);
+                element.style.width = this.width;
+                element.style.height = this.height;
+                element.style.backgroundColor = this.backgroundColor;
+                document.querySelector(this.element).appendChild(element);
+            }
+            get createElement(){
+                return this.CreateElement();
+            }
+        }
+        const redRectangle = new element(
+            '.body',
+            'div',
+            '100%',
+            '150px',
+            'red'
+        );
+        const blueRectangle = new element(
+            '.body',
+            'div',
+            '100%',
+            '150px',
+            'blue'
+        );
+
+        redRectangle.createElement;
+        blueRectangle.createElement;
+    </script>
+</body>
+</html>
